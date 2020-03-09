@@ -1,22 +1,21 @@
-<p>basic-form works!</p>
-<form [formGroup]="myForm">
-
+<div class="card">
     Value: {{ myForm.value | json}}
-
     <hr>
-
-    <mat-form-field>
-        <input matInput placeholder="email" formControlName="email">
-    </mat-form-field>
-
-    <mat-form-field>
-        <textarea matInput placeholder="your message..." formControlName="message"></textarea>
-    </mat-form-field>
-
-    <mat-form-field>
-        <mat-select formControlName="career" placeholder="career">
-
-        </mat-select>
-    </mat-form-field>
-
-</form>
+    <form [formGroup]="myForm" >
+        <mat-label>email: </mat-label>
+        <mat-form-field appearance="fill">
+            <input matInput placeholder="email" formControlName="email">
+        </mat-form-field>
+    <mat-label>message: </mat-label>
+        <mat-form-field>
+            <textarea matInput placeholder="your message..." formControlName="message"></textarea>
+        </mat-form-field>
+    <mat-label>career: </mat-label>
+        <mat-form-field>
+            <mat-select formControlName="career" placeholder="career">
+                <mat-option value="option">Option</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-button mat-raised-button>Save!</button>
+    </form>
+</div>
