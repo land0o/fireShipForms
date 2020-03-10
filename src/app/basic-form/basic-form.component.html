@@ -1,9 +1,12 @@
 <div class="card">
-    Value: {{ myForm.value | json}}
+    <h1>Basic Form</h1>
+    <div class="value">
+        Value: {{ myForm.value | json}}
+    </div>
     <hr>
     <form [formGroup]="myForm" >
         <mat-label>email: </mat-label>
-        <mat-form-field appearance="fill">
+        <mat-form-field>
             <input matInput placeholder="email" formControlName="email">
         </mat-form-field>
     <mat-label>message: </mat-label>
@@ -13,7 +16,8 @@
     <mat-label>career: </mat-label>
         <mat-form-field>
             <mat-select formControlName="career" placeholder="career">
-                <mat-option value="option">Option</mat-option>
+                <mat-option value="dog">Dog</mat-option>
+                <mat-option value="cat">Cat</mat-option>
             </mat-select>
         </mat-form-field>
         <button mat-button mat-raised-button>Save!</button>
