@@ -30,8 +30,8 @@ export class ArrayFormComponent implements OnInit {
     });
     this.phoneForms.push(phone);
   }
-  deletePhone(i){
-    this.phoneForms.removeAt(i)
+  deletePhone(i) {
+    this.phoneForms.removeAt(i);
   }
 
 }

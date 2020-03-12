@@ -1,1 +1,39 @@
-<p>valid-form works!</p>
+<div class="card">
+    <h1>Valid form!</h1>
+    <div class="value">
+        Value: {{ myForm.value | json}}
+    </div>
+    <hr>
+    <form [formGroup]="myForm" >
+        <mat-form-field >
+            <input matInput placeholder="email" formControlName="email" autocomplete="auto">
+            <mat-error *ngIf="email.invalid && email.touched">
+                What aint no email i've ever seen!
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="password" formControlName="password">
+            <mat-hint align="end">Must use 1 letter and 1 number!</mat-hint>
+            <mat-error *ngIf="password.invalid && email.touched">
+                Your password is straight trash!
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput placeholder="age" value="0" formControlName="age">
+            <mat-error *ngIf="age.errors?.min && age.touched">
+                {{age.errors.min.actual}} whoa get out of here youngin!
+            </mat-error>
+            <mat-error *ngIf="age.errors?.max && age.touched">
+                {{age.errors.max.actual}} whoa get out of here oldie!
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-checkbox formControlName="agree" color="primary">Is you rolling?</mat-checkbox>
+        <hr>
+        <button mat-raised-button [disabled]="myForm.invalid" color="primary">O lets doo it!!!</button>
+
+    </form>
+
+</div>
